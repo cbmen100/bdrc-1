@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>봉담러닝크루 운영진</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #1a1a1a; color: #f0f0f0; }
+    }
+
+    .page {
+      font-family: 'Noto Sans KR', sans-serif;
+      padding: 2rem 1rem 3rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .header-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 42px;
+      letter-spacing: 0.06em;
+      color: inherit;
+      line-height: 1;
+    }
+
+    .header-sub {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+      font-weight: 400;
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: currentColor;
+      margin: 14px auto 0;
+      opacity: 0.12;
+    }
+
+    .card {
+      display: flex;
+      border: 0.5px solid rgba(0,0,0,0.12);
+      border-radius: 12px;
+      background: #ffffff;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .card { background: #242424; border-color: rgba(255,255,255,0.1); }
+    }
+
+    .card-photo {
+      width: 100px;
+      min-width: 100px;
+      background: #f5f5f3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .card-photo { background: #2e2e2e; }
+    }
+
+    .card-photo-inner {
+      width: 100%;
+      height: 100%;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .photo-placeholder-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .photo-placeholder-icon { border-color: rgba(255,255,255,0.2); }
+    }
+
+    .photo-placeholder-icon svg {
+      opacity: 0.3;
+    }
+
+    .photo-placeholder-text {
+      font-size: 10px;
+      color: #aaa;
+      letter-spacing: 0.05em;
+    }
+
+    .card-body {
+      flex: 1;
+      padding: 1.1rem 1.25rem;
+      border-left: 0.5px solid rgba(0,0,0,0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .card-body { border-left-color: rgba(255,255,255,0.07); }
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .session-badge {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .role-title {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .member-name {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .task-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .task-list li {
+      font-size: 13px;
+      color: #666;
+      display: flex;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .task-list li { color: #aaa; }
+    }
+
+    .task-list li::before {
+      content: '—';
+      opacity: 0.3;
+      flex-shrink: 0;
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    .dual-photo {
+      display: flex;
+      flex-direction: column;
+      width: 100px;
+      min-width: 100px;
+      background: #f5f5f3;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .dual-photo { background: #2e2e2e; }
+    }
+
+    .dual-photo .card-photo-inner {
+      min-height: 60px;
+      border-bottom: 0.5px solid rgba(0,0,0,0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .dual-photo .card-photo-inner { border-bottom-color: rgba(255,255,255,0.07); }
+    }
+
+    .dual-photo .card-photo-inner:last-child {
+      border-bottom: none;
+    }
+
+    /* Badge colors */
+    .c1 { background: #EAF3DE; color: #3B6D11; }
+    .c2 { background: #E6F1FB; color: #185FA5; }
+    .c3 { background: #FAEEDA; color: #854F0B; }
+    .c4 { background: #FCEBEB; color: #A32D2D; }
+    .c5 { background: #FBEAF0; color: #993556; }
+    .c6 { background: #E1F5EE; color: #0F6E56; }
+
+    @media (prefers-color-scheme: dark) {
+      .c1 { background: #27500A; color: #C0DD97; }
+      .c2 { background: #0C447C; color: #B5D4F4; }
+      .c3 { background: #633806; color: #FAC775; }
+      .c4 { background: #791F1F; color: #F7C1C1; }
+      .c5 { background: #72243E; color: #F4C0D1; }
+      .c6 { background: #085041; color: #9FE1CB; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <p class="header-label">Bongdam Running Crew</p>
+    <h1 class="header-title">운영진</h1>
+    <p class="header-sub">크루를 함께 이끌어가는 사람들</p>
+    <div class="divider"></div>
+  </div>
+
+  <!-- 크루장 -->
+  <div class="card">
+    <div class="card-photo">
+        <img src="images/MEMBER01.png" alt="이현" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="session-badge c1">크루장</span>
+        <span class="role-title">이현</span>
+      </div>
+      <ul class="task-list">
+        <li>크루 비전 제시 및 연간 운영계획 수립</li>
+        <li>대외 협력 및 공식 일정 승인</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 총무 -->
+  <div class="card">
+    <div class="card-photo">
+        <img src="images/MEMBER02.png" alt="정재인" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="session-badge c2">운영세션</span>
+        <span class="role-title">총무 · 정재인</span>
+      </div>
+      <ul class="task-list">
+        <li>회비 및 예산 관리, 단체복 제작</li>
+        <li>공문·공지 작성, 행사 일정 및 TF 운영</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 트레이닝 리더 -->
+  <div class="card">
+    <div class="card-photo">
+        <img src="images/MEMBER03.png" alt="전재훈" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="session-badge c3">훈련세션</span>
+        <span class="role-title">트레이닝 리더 · 전재훈</span>
+      </div>
+      <ul class="task-list">
+        <li>주간 훈련 설계 및 실전 운영</li>
+        <li>페이싱 리드, BTG·BTR 운영 총괄</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 레이스 매니저 (2인) -->
+  <div class="card">
+    <div class="dual-photo">
+      <div class="card-photo-inner">
+        <img src="images/MEMBER04.png" alt="김지훈" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="card-photo-inner">
+        <img src="images/MEMBER05.png" alt="김지희" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="session-badge c4">대회세션</span>
+        <span class="role-title">레이스 매니저</span>
+      </div>
+      <p class="member-name">김지훈 · 김지희</p>
+      <ul class="task-list">
+        <li>대회 일정표 관리 및 참가자 명단 취합</li>
+        <li>대회 단체접수</li>
+        <li>운영 자문 및 고문(김지훈)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 커뮤니케이터 -->
+  <div class="card">
+    <div class="card-photo">
+        <img src="images/MEMBER06.png" alt="김정원" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="session-badge c5">커뮤니티세션</span>
+        <span class="role-title">커뮤니케이터 · 김정원</span>
+      </div>
+      <ul class="task-list">
+        <li>SNS 피드·스토리 관리 및 자료 보관</li>
+        <li>카페, 밴드 관리</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 아이디어뱅크 -->
+  <div class="card">
+    <div class="card-photo">
+      <img src="images/MEMBER07.png" alt="박종민" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="session-badge c6">이벤트세션</span>
+        <span class="role-title">아이디어뱅크 · 박종민</span>
+      </div>
+      <ul class="task-list">
+        <li>'이번에 XX 해보자' 의견 내기</li>
+        <li>크루활동에 관심 많기</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
