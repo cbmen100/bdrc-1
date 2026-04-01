@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>봉담러닝크루 집결지 안내</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #1a1a1a; color: #f0f0f0; }
+    }
+
+    .page {
+      font-family: 'Noto Sans KR', sans-serif;
+      padding: 2rem 1rem 3rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .header-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 42px;
+      letter-spacing: 0.06em;
+      color: inherit;
+      line-height: 1;
+    }
+
+    .header-sub {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+      font-weight: 400;
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: currentColor;
+      margin: 14px auto 0;
+      opacity: 0.12;
+    }
+
+    .map-card {
+      border: 0.5px solid rgba(0,0,0,0.12);
+      border-radius: 12px;
+      background: #ffffff;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .map-card { background: #242424; border-color: rgba(255,255,255,0.1); }
+    }
+
+    .map-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .place-info {
+      padding: 1.1rem 1.25rem;
+      border-top: 0.5px solid rgba(0,0,0,0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .place-info { border-top-color: rgba(255,255,255,0.07); }
+    }
+
+    .place-name {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .place-address {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <p class="header-label">Bongdam Running Crew</p>
+    <h1 class="header-title">집결지 안내</h1>
+    <p class="header-sub">정기런 집합 장소</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="map-card">
+    <img src="images/place.png" alt="봉담러닝크루 집결지 지도" />
+    <div class="place-info">
+      <p class="place-name">봉담2생태체육공원</p>
+      <p class="place-address">경기도 화성시 봉담읍 동화길 99</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
